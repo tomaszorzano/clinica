@@ -1,0 +1,28 @@
+<div class="container" *ngIf="visible" [@slideInOut]>
+    <div class="row text-center">
+        <img id="img" class="mb-4 pt-4" src="" alt="" appNotImage>
+        <!-- <img id="img" class="mb-4 pt-4" src="../../../assets/cruzVerde.jpg" alt="" appNotImage> -->
+        <div *ngIf="!islogged ;else bienvenida">
+            <div class="col-12">
+                <button type="button" class="btn btn-lg btn-danger m-4" (click)="goIngreso()">Entrar</button>
+            </div>
+            <div class="col-12">
+                <button type="button" class="btn btn-lg btn-danger m-4" (click)="goRegistro()">Registrarse</button>
+            </div>
+        </div>
+        <ng-template class="form-control" #bienvenida>
+            <p class="text-align-center">“La clínica OnLine, especialista en salud, cuenta actualmente con consultorios (6 en la actualidad),
+                dos laboratorios (físicos en la clínica), y una sala de espera general. Está abierta al público de lunes a
+                viernes en el horario de 8:00 a 19:00, y los sábados en el horario de 8:00 a 14:00.
+                
+                Trabajan en ella profesionales de diversas especialidades, que ocupan los consultorios acorde a su
+                disponibilidad, y reciben en ellos pacientes con turno para consulta o tratamiento. Dichos turnos son
+                pedidos por la web seleccionando el profesional o la especialidad. La duración mínima de un turno es
+                30 minutos.” pero los profesionales pueden cambiar la duración según su especialidad. Estos
+                profesionales pueden tener más de una especialidad.
+                También contamos con un sector dentro de la clínica que se encarga de la organización y
+                administración de la misma. </p>
+              
+        </ng-template>
+    </div>
+</div>

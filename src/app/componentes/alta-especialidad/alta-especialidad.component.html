@@ -1,0 +1,14 @@
+<form [formGroup]="formulario" (ngSubmit)="guardar()">
+    <div class="container">
+        <div class="row">
+            <h4 class="mb-6">Alta Especialidad</h4>
+            <input type="text" class="form-control" id="especialidad" formControlName="especialidad"
+                placeholder="Ingrese Especialidad">
+            <span class="text-danger"
+                *ngIf="formulario.get('especialidad')?.hasError('required')  && formulario.get('especialidad')?.touched">
+                Debes ingresar el nombre.</span>
+            <br>
+            <button class="btn btn-primary btn-block" type="submit" [disabled]="formulario.invalid">Registrar</button>
+        </div>
+    </div>
+</form>

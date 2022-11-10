@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "lab4-61f01": {
+      "hosting": {
+        "clinica": [
+          "clinica-tomas-zorzanno"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "lab4-61f01"
+  }
+}

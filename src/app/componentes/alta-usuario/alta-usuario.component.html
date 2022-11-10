@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+    async defer>
+</script>
+</head>
+<form [formGroup]="formulario" (ngSubmit)="registrar()">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 order-md-1">
+                <h4 class="mb-3">Alta Usuario</h4>
+                <div class="row">
+                
+                    <div class="col-3">
+                        <button class="btn btn-success" id="btnRegistro" type="button" (click)="getTipoUsuarioAdmin()"
+                            *ngIf="usuarioLogueado"><img id="imgBtnRegistro" src="../../../assets/admin.png">Admin</button>
+                    </div>
+                    <div class="col-3">
+                        <button class="btn btn-success" id="btnRegistro" type="button"
+                            (click)="getTipoUsuarioEspecialista()"><img id="imgBtnRegistro"
+                                src="../../../assets/doctor.png">Especialista</button>
+                    </div>
+                    <div class="col-3">
+                        <button class="btn btn-success" id="btnRegistro" type="button"
+                            (click)="getTipoUsuarioPaciente()"><img id="imgBtnRegistro"
+                                src="../../../assets/paciente.png">Paciente</button>
+                    </div>
+
+                </div>
+                <div *ngIf="tipoUsuario">
+                    <div class="col-md-6 mb-3">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" formControlName="nombre">
+                        <span class="text-danger"
+                            *ngIf="formulario.get('nombre')?.hasError('required')  && formulario.get('nombre')?.touched">
+                            Debes ingresar el nombre.</span>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="apellido">Apellido</label>
+                        <input type="text" class="form-control" id="apellido" formControlName="apellido">
+                        <span class="text-danger"
+                            *ngIf="formulario.get('apellido')?.hasError('required')  && formulario.get('apellido')?.touched">
+                            Debes ingresar el apellido.</span>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="edad">Edad</label>
+                        <input type="text" class="form-control" id="edad" formControlName="edad">
+                        <span class="text-danger"
+                            *ngIf="formulario.get('edad')?.hasError('required')  && formulario.get('edad')?.touched">
+                            Debes ingresar la edad.</span>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="dni">DNI</label>
+                        <input type="text" class="form-control" id="dni" formControlName="dni">
+                        <span class="text-danger"
+                            *ngIf="formulario.get('dni')?.hasError('required')  && formulario.get('dni')?.touched">
+                            Debes ingresar el DNI.</span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email">Email</label>
+                        <input type="text" class="form-control" id="email" formControlName="email">
+                        <span class="text-danger"
+                            *ngIf="formulario.get('email')?.hasError('required') && formulario.get('email')?.touched">
+                            Debes indicar el email.</span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" formControlName="password">
+                        <span class="text-danger"
+                            *ngIf="formulario.get('password')?.hasError('required') && formulario.get('password')?.touched">
+                            Debes indicar el password.</span>
+                    </div>
+
+                    <div class="mb-3" *ngIf="paciente">
+                        <label for="obraSocial">Obra Social</label>
+                        <input type="text" class="form-control" id="obraSocial" formControlName="obraSocial">
+                        <span class="text-danger"
+                            *ngIf="formulario.get('obraSocial')?.hasError('required') && formulario.get('obraSocial')?.touched">
+                            Debes indicar la Obra Social.</span>
+                    </div>
+
+                    <div class="mb-3" *ngIf="especialista">
+                        <label for="especialidad">Especialidades</label>
+                        <input type="text" class="form-control" id="especialidades" formControlName="especialidades">
+                        <span class="text-danger"
+                            *ngIf="formulario.get('especialidades')?.hasError('required') && formulario.get('especialidades')?.touched">
+                            Debes completar el campo.</span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="img1Perfil">Imagen Perfil</label>
+                        <input type="file" class="form-control" id="img1Perfil" (change)="selectFile($event)"
+                            formControlName="img1Perfil">
+                        <span class="text-danger"
+                            *ngIf="formulario.get('img1Perfil')?.hasError('required') && formulario.get('img1Perfil')?.touched">
+                            Debes subir una imagen.</span>
+                    </div>
+                    <div *ngIf="paciente" class="mb-3">
+                        <label for="img2Perfil">Imagen Perfil</label>
+                        <input type="file" class="form-control" id="img2Perfil" (change)="selectFile2($event)"
+                            formControlName="img2Perfil">
+                        <span class="text-danger"
+                            *ngIf="formulario.get('img2Perfil')?.hasError('required') && formulario.get('img2Perfil')?.touched">
+                            Debes subir una imagen.</span>
+                    </div>
+                    <hr class="mb-4">
+
+                    <div class="mb-3">
+                        <app-captcha (resultadoCaptcha)="resolvedPropio($event)"></app-captcha>
+                     
+                    </div>
+                    
+                    <div [hidden]="!captchaPropio">
+                        <button class="btn btn-primary btn-lg btn-block" type="submit"
+                            [disabled]="formulario.invalid">Registrarse</button>
+                        <div *ngIf="img1Perfil && img2Perfil" class="progress mt-2">
+                            <div class="progress-bar progress-bar-info" role="progressbar" type="success"
+                                attr.aria-valuenow="{{ percentage }}" aria-valuemin="0" aria-valuemax="100"
+                                [ngStyle]="{ width: percentage + '%' }">{{percentage}}%
+                            </div>
+                    </div>
+                   
+                      
+                    </div>
+                </div>
+                
+               
+            </div>
+            <div class="col-md-3 order-md-1" *ngIf="especialista">
+                <app-lista-especialidad [especialidades]="especialidades"
+                    (especialidadSeleccionada)="asignarEspecialidadSeleccionada($event)"></app-lista-especialidad>
+                <app-alta-especialidad></app-alta-especialidad>
+            </div>
+        </div>
+    </div>
+</form>

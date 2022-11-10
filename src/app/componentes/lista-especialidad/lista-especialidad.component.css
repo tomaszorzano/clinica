@@ -1,0 +1,8 @@
+#imgEspecialidad{
+    height: 50px;
+    width: 50px;
+    display:block;
+    margin:auto;
+    border-radius: 5rem;
+    /*background-image: url('../../../assets/ahorcado/ahorcado.jpg');*/
+  }

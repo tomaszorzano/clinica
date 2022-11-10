@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+      <div class="col-12">
+        <form class="form-signin">
+          <div class="">
+            <img id="img" class="mb-4" src="../../../assets/cruzVerde.jpg" alt="">
+          </div>
+          <div class="col-12">
+            <h1 class="h3 mb-3 font-weight-normal text-center">Inicio Sesion</h1>
+          </div>
+          <div class="col-12">
+            <label for="email" class="sr-only mb-2">Correo Electronico</label>
+            <input type="email" id="email" class="form-control" name="email" [(ngModel)]="email">
+          </div>
+          <div class="col-12">
+            <label for="password" class="sr-only mb-2">Password</label>
+            <input type="password" id="password" class="form-control" name="password" [(ngModel)]="password">
+          </div>
+          <div class="form-group">
+            <button type="button" class="btn btn-lg btn-success btn-block" (click)="ingresar()">Entrar</button>
+          </div>
+          <!-- <div class="form-group">
+            <button type="button" class="btn btn-lg btn-success btn-block" (click)="logEliseo()">Autocompletar</button>
+          </div> -->
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="form-group col-2" *ngFor="let usuario of arrayUsuarios">
+        <button type="button" class="btn" id="btnLogs" (click)="logUsuario(usuario)"><img id="imgBotonesLog" [src]="usuario.img1Url" appNotImage>
+        {{usuario.tipoUsuario}}</button>
+      </div>
+    </div>
+  </div>

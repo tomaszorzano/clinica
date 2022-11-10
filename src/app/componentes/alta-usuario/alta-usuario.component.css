@@ -1,0 +1,17 @@
+#imgBtnRegistro{
+    height: 50px;
+    width: 50px;
+    display:block;
+    margin:auto;
+    border-radius: 5rem;
+    /*background-image: url('../../../assets/ahorcado/ahorcado.jpg');*/
+  }
+  
+  #btnRegistro{
+    height: 120px;
+    width: 120px;
+    padding-top:5px;
+    padding-bottom:5px;
+    padding-left:5px;
+    padding-right:5px;
+  }

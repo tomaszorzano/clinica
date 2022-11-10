@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="row">
+        <h4 class="d-flex mb-3">
+            <span class="text-muted text-center">Especialidad</span>
+        </h4>
+        <ul class="list-group mb-3 align-items-center" *ngFor="let especialidad of especialidades">
+            <li class="list-group-item" (click)="asignarEspecialidad(especialidad)">
+                    <button type="button" class="btn mb-2" ><img id="imgEspecialidad" [src]="especialidad.imgEspecialidadUrl" *ngIf="especialidad.imgEspecialidadUrl"> {{especialidad.nombre}} </button>
+            </li>
+        </ul>
+    </div>
+</div>

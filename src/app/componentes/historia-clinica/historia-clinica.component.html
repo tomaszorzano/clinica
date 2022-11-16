@@ -1,0 +1,33 @@
+<div class="col-12" id="pdfTable" #pdfTable> 
+    <!-- hidden -->
+    <h1 >Clinica Online
+      <img src="../../../assets/cruzVerde.jpg" style="height: 30px;width: 30px;">
+    </h1>
+   <h3>Mis turnos</h3>
+    <table class="table table-bordered" > 
+      <tr class="table-primary">       
+         <th>Fecha</th> 
+         <th>Especialidad</th>  
+         <th>Especialista</th>
+         <th>Reseña</th>
+      </tr>    
+      <tr *ngFor="let turno of listaHistoriaClinica" appAgranda>
+      
+         <td>{{ turno.fecha }} {{turno.hora }}</td>  
+         <td>{{ turno.especialidad.nombre }}</td> 
+         <td>{{ turno.especialista.nombre}} {{ turno.especialista.apellido }}</td>
+         <td>
+            <div *ngIf="turno.comentariosPaciente != ''">
+                {{ turno.comentariosPaciente }}
+            </div>
+            <div *ngIf="turno.comentariosEspecialista != ''">
+                {{ turno.comentariosEspecialista }}
+            </div>
+            <div *ngIf="turno.comentariosAdmin != ''">
+                {{ turno.comentariosAdmin }}
+            </div>
+        </td>
+      </tr> 
+    </table>
+  </div>
+  <button type="button" class="btn btn-danger" appPosicion (click)="crearPdf()">Descargar pdf</button> 

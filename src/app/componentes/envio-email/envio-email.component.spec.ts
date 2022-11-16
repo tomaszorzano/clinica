@@ -11,7 +11,9 @@ describe('EnvioEmailComponent', () => {
       declarations: [ EnvioEmailComponent ]
     })
     .compileComponents();
+  });
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(EnvioEmailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

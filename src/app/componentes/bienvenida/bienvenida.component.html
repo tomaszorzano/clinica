@@ -3,12 +3,11 @@
         <img id="img" class="mb-4 pt-4" src="" alt="" appNotImage>
         <!-- <img id="img" class="mb-4 pt-4" src="../../../assets/cruzVerde.jpg" alt="" appNotImage> -->
         <div *ngIf="!islogged ;else bienvenida">
-            <div class="col-12">
-                <button type="button" class="btn btn-lg btn-danger m-4" (click)="goIngreso()">Entrar</button>
+            <div class="col-6">
+                <button type="button" class="btn btn-lg btn-success m-4" (click)="goIngreso()">Entrar</button>
+                <button type="button" class="btn btn-lg btn-success m-4" (click)="goRegistro()">Registrarse</button>
             </div>
-            <div class="col-12">
-                <button type="button" class="btn btn-lg btn-danger m-4" (click)="goRegistro()">Registrarse</button>
-            </div>
+            
         </div>
         <ng-template class="form-control" #bienvenida>
             <p class="text-align-center">“La clínica OnLine, especialista en salud, cuenta actualmente con consultorios (6 en la actualidad),

@@ -1,0 +1,27 @@
+
+<div class="container" [@slideInOut]>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Fecha y Hora</th>
+                <th>Paciente</th>
+                <th>Especialista</th>
+                <th>Especialidad</th>
+                <th>Estado</th>
+                <th>Reseña Paciente</th>
+                <th>Reseña Especialista</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let turno of turnos" (click)="asignarTurno(turno)">
+                <td>{{turno.fecha}} - {{turno.hora}}</td>
+                <td>{{turno.paciente.nombre}} {{turno.paciente.apellido}}</td>
+                <td>{{turno.especialista.nombre}} {{turno.especialista.apellido}}</td>
+                <td>{{turno.especialidad.nombre}}</td>
+                <td>{{turno.estado}}</td>
+                <td *ngIf="turno.comentariosPaciente">{{turno.comentariosPaciente}}</td>
+                <td *ngIf="turno.comentariosEspecialista">{{turno.comentariosEspecialista}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

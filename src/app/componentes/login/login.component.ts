@@ -19,18 +19,15 @@ export class LoginComponent implements OnInit {
   usuario: Usuario = new Usuario();
   msjError!: string;
   //usuarios!: any;
-  usuarios:Array <Usuario> = new Array<Usuario>();
-  arrayUsuarios:Array <Usuario> = new Array<Usuario>();
+  usuarios: Array<Usuario> = new Array<Usuario>();
+  arrayUsuarios: Array<Usuario> = new Array<Usuario>();
 
   constructor(public router: Router, public authSvc: AuthService, public usuarioSvc: UsuarioService) {
- 
-   }
+
+  }
 
   ngOnInit(): void {
-    // this.usuarios = [];
-    // this.usuarios = this.usuarioSvc.getUsuariosLog();
-    // console.log(this.usuarios);
-    this.cargarUsuarios();
+
   }
 
   async onLogin() {
@@ -46,69 +43,60 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  async logEliseo() {
-      this.email = 'leliseo89@hotmail.com';
-      this.password = '123456';
+  async logAdmin() {
+    this.email = 'tomas.d.zorzano@gmail.com';
+    this.password = '123123123';
+  }
+  async logE1() {
+    this.email = 'especialista@gmail.com';
+    this.password = '123123123';
+  }
+  async logE2() {
+    this.email = 'especialista2@gmail.com';
+    this.password = '123123123';
+  }
+  async logP1() {
+    this.email = 'paciente@gmail.com';
+    this.password = '123123123';
+  }
+  async logP2() {
+    this.email = 'paciente2@gmail.com';
+    this.password = '123123123';
+  }
+  async logP3() {
+    this.email = 'paciente3@gmail.com';
+    this.password = '123123123';
   }
 
-  async logUsuario(usuario:any) {
-    this.email = usuario.email;
-    this.password = usuario.password;
-}
 
-  // public usuario: Usuario = new Usuario();
-  // public mostrarError = false;
-  // dbPath = "usuariosClinica";
-  // msjError!: string;
-  // usuariosRef!: AngularFirestoreCollection<any>;
-  // img1Url!: Imagen;
-  // img1Nombre!: string;
-  // img2Url!: Imagen;
-  // img2Nombre!: string;
-  // email!: string;
-  // password!: string;
 
-  // constructor(private authSvc: AuthService, private router: Router, private db: AngularFirestore) { }
-
-  // ngOnInit(): void {
-  // }
-
-  ingresar(){
+  ingresar() {
     this.usuario.email = this.email;
     this.usuario.password = this.password;
 
-    this.authSvc.login(this.usuario).then((result) =>{
-        //this.authSvc.isLoggedIn = true;
-        console.log('Login exitoso', result);
-        
-        if (this.authSvc.msjError != "") {
-          this.msjError = this.authSvc.msjError;
-        }
+    this.authSvc.login(this.usuario).then((result) => {
+      //this.authSvc.isLoggedIn = true;
+      console.log('Login exitoso', result);
 
-        this.usuarioSvc.addLogIngresos(this.usuario.email);
-    })
-    .catch((res)=>{
-      if(res.message == "The password is invalid or the user does not have a password."){
-        this.msjError = "La contraseña ingresada es invalida."
+      if (this.authSvc.msjError != "") {
+        this.msjError = this.authSvc.msjError;
       }
-    });
+
+      this.usuarioSvc.addLogIngresos(this.usuario.email);
+    })
+      .catch((res) => {
+        if (res.message == "The password is invalid or the user does not have a password.") {
+          this.msjError = "La contraseña ingresada es invalida."
+        }
+      });
   }
 
-  cargarUsuarios()
-  {
-    this.arrayUsuarios = [];
 
-    var admin = new Usuario();
-    admin.email = "tomas.d.zorzano@gmail.com";
-    admin.password = "123123123";
-    admin.img1Url = "https://firebasestorage.googleapis.com/v0/b/lab4-f7591.appspot.com/o/usuariosClinica%2Fleliseo89%40hotmail.com%2FperfilAdmin.png?alt=media&token=e39b6f0a-da9f-4c8e-81be-f899f5c80f66";
-    this.arrayUsuarios.push(admin);
-
-    
-    
-
-   
+  activate() {
+    document.querySelector('.fab')?.classList.toggle('fab-activate')
+    document.querySelector('.box')?.classList.toggle('box-activate')
   }
+
 
 
 }

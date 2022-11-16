@@ -1,16 +1,22 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-danger ">
+<nav class="navbar navbar-expand-lg navbar-light bg-success rounded">
     <a class="navbar-brand text-light" href="#">Clinica</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample"
-        aria-controls="navbarsExample" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09"
+        aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
     <div *ngIf="usuario$ | async as usuario; else login">
         <a class="btn text-light" (click)="goBienvenida()">Bienvenida</a>
         <a class="btn text-light" (click)="goSeccionUsuarios()" *ngIf="adminLogueado">Usuarios</a>
+        <a class="btn text-light" (click)="goSolicitarTurno()" *ngIf="adminLogueado || pacienteLogueado">Solicitar Turno</a>
+        <a class="btn text-light" (click)="goMisTurnosPaciente()" *ngIf="pacienteLogueado">Mis Turnos</a>
+        <a class="btn text-light" (click)="goMisTurnosEspecialista()" *ngIf="especialistaLogueado">Mis Turnos</a>
+        <a class="btn text-light" (click)="goPacientes()" *ngIf="especialistaLogueado">Pacientes</a>
+        <a class="btn text-light" (click)="goTurnos()" *ngIf="adminLogueado">Turnos</a>
+        <a class="btn text-light" (click)="goInformes()" *ngIf="adminLogueado">Informes</a>
         <a class="btn text-light" (click)="goMiPerfil()">Mi Perfil</a>
         <a class="py-2 d-none text-light d-md-inline-block btn" *ngIf="usuario">{{usuario?.email}}</a>
-        <a class="py-2 d-none text-dark d-md-inline-block btn" type="button" (click)="onLogout()" *ngIf="usuario">Logout</a>
+        <a class="py-2 d-none text-danger d-md-inline-block btn" type="button" (click)="onLogout()" *ngIf="usuario">Logout</a>
         
       </div>
       <ng-template #login>

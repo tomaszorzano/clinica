@@ -1,0 +1,17 @@
+<button class="kc_fab_main_btn btn-hover" click="abrirMenu()" id="fabButton" style="margin:2px;background-size: cover; 
+width: 70px;
+height: 70px;" (click)="abrirMenu()">Usuarios</button>
+<div id="menu" class="d-none">
+    <div *ngFor="let item of turnosPacientesAtendidos; index as i">
+        <button class="kc_fab_main_btn btn-hover mb-2" (click)="emitirUser(item)" id="fabButton"><img id="imgBotonesLog"
+                [src]="item.paciente.img1Url" id="imgFabButton">{{item.paciente.nombre}}</button>
+    </div>
+</div>
+<div *ngIf="turnoSeleccionado" id="turno" class="mb-2">
+    <h3>Atendido el: {{turnoSeleccionado.fecha}} {{turnoSeleccionado.hora}}</h3>
+    <h3>Reseñas:</h3>
+    <p>{{turnoSeleccionado.comentariosAdmin}}</p>
+    <p>{{turnoSeleccionado.comentariosEspecialista}}</p>
+    <p>{{turnoSeleccionado.comentariosPaciente}}</p>
+
+</div>

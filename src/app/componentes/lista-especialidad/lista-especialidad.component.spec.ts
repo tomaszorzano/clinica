@@ -11,7 +11,9 @@ describe('ListaEspecialidadComponent', () => {
       declarations: [ ListaEspecialidadComponent ]
     })
     .compileComponents();
+  });
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(ListaEspecialidadComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

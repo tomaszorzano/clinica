@@ -1,0 +1,16 @@
+<br>
+<table id="excel-table" hidden> 
+  <tr>       
+     <th>Fecha</th> 
+     <th>Especialidad</th>  
+     <th> Especialista</th> 
+  </tr>    
+  <tr *ngFor="let turno of listaTurnos">
+     <td> {{ turno.fecha }}{{ turno.hora }}</td>  
+     <td>{{ turno.especialidad.nombre }}</td> 
+     <td>{{ turno.especialista.nombre }} {{ turno.especialista.apellido }}</td>  
+  </tr> 
+</table>
+
+
+<button *ngIf="mostrar" class="btn btn-danger" (click)="exportexcel()"> Descargar Excel</button> 

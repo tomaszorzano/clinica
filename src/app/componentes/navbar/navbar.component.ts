@@ -89,5 +89,27 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['miPerfil']);
   }
 
+  goMisTurnosPaciente(){
+    this.router.navigate(['misTurnos']);
+  }
 
+  goMisTurnosEspecialista(){
+    this.router.navigate(['misTurnosEspecialista']);
+  }
+
+  goTurnos(){
+    this.router.navigate(['turnos']);
+  }
+
+  goSolicitarTurno(){
+    this.router.navigate(['solicitarTurno']);
+  }
+
+  goPacientes(){
+    this.router.navigate(['pacientes']);
+  }
+
+  goInformes(){
+    this.router.navigate(['informes']);
+  }
 }

@@ -83,4 +83,76 @@ body {
   padding-right:5px;
   border-color: black;
   
-}   
+}
+.fab
+{
+  position: fixed;
+  bottom: 32px;
+  border-radius: 50%;
+  
+  width: 60px;
+  height: 60px;
+  background: white;
+  box-shadow: 1px 2px 4px grey;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.fab:hover
+{
+  cursor: pointer;
+}
+.fab img
+{
+  width: 45%;
+  transform: rotate(45deg);
+  transition: 0.4s;
+
+}
+.box
+{
+  position: fixed;
+  bottom: 44px;
+  
+  height: 0px;
+  transition-delay: 0.3s;
+  width: 80px;
+  transition: 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.item
+{
+  overflow: hidden;
+  border-radius: 50%;
+  transition: 0.4s ease-in;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 1px 1px 3px grey;
+}
+.item6{
+  margin-bottom: 69px;
+}
+.item:hover{
+  cursor: pointer;
+}
+.item:hover img{
+  transform: rotate(360deg);
+  transition: all 0.5s;
+
+}
+.box-activate
+{
+  height: 290px;
+}
+.fab-activate img{
+  transform: rotate(270deg);
+  width: 40px;
+}

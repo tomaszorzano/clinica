@@ -1,0 +1,22 @@
+#imgFabButton{
+    height: 50px;
+    width: 50px;
+    display:block;
+    margin:auto;
+    border-radius: 5rem;
+    /*background-image: url('../../../assets/ahorcado/ahorcado.jpg');*/
+  }
+
+  #turno{
+    border-style: ridge;
+    border-color: rgb(0, 156, 0);
+    text-align: left;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(199, 255, 199);
+  }
+
+  #fabButton{
+    border-radius: 3rem;
+    background-color: rgb(199, 255, 199);
+  }

@@ -26,11 +26,20 @@
       </div>
     </div>
   </div>
+  
   <div class="container">
-    <div class="row">
-      <div class="form-group col-2" *ngFor="let usuario of arrayUsuarios">
-        <button type="button" class="btn" id="btnLogs" (click)="logUsuario(usuario)"><img id="imgBotonesLog" [src]="usuario.img1Url" appNotImage>
-        {{usuario.tipoUsuario}}</button>
-      </div>
+    <div class="fab" (click)="activate()">
+      <img src="../../../assets/users.png" alt="">
     </div>
+    <div class="box">
+      <a class="item item1" (click)="logAdmin()"><img src="../../../assets/messi.png"></a>
+      <a class="item item2" (click)="logE1()" ><img src="../../../assets/cr7.png" ></a>
+      <a class="item item3" (click)="logE2()" ><img src="../../../assets/neymar.png"></a>
+      <a class="item item4" (click)="logP1()" ><img src="../../../assets/goku.png" ></a>
+      <a class="item item5" (click)="logP2()" ><img src="../../../assets/jesus.png" ></a>
+      <a class="item item6" (click)="logP3()" ><img src="../../../assets/naruto.png" ></a>
+    </div>
+   
+
   </div>
+  

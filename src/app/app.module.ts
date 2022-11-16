@@ -25,6 +25,36 @@ import { ListaEspecialidadComponent } from './componentes/lista-especialidad/lis
 import { CaptchaComponent } from './componentes/captcha/captcha.component';
 import { CaptchaDirective } from './directivas/captcha.directive';
 import { HighchartsChartModule } from 'highcharts-angular';
+import { SeccionUsuariosComponent } from './componentes/seccion-usuarios/seccion-usuarios.component';
+import { TurnosComponent } from './componentes/turnos/turnos.component';
+import { FilterEspecialistaPipe } from './pipes/filter-especialista.pipe';
+import { FilterPacientePipe } from './pipes/filter-paciente.pipe';
+import { FilterTurnosPipe } from './pipes/filter-turnos.pipe';
+import { EstadoDirective } from './directivas/estado.directive';
+import { SolicitarTurnosComponent } from './componentes/solicitar-turnos/solicitar-turnos.component';
+import { TablaTurnosComponent } from './componentes/tabla-turnos/tabla-turnos.component';
+import { TurnoDetalleComponent } from './componentes/turno-detalle/turno-detalle.component';
+import { TurnosFinalizadosComponent } from './componentes/turnos-finalizados/turnos-finalizados.component';
+import { TurnosPorDiaComponent } from './componentes/turnos-por-dia/turnos-por-dia.component';
+import { TurnosPorEspecialistaComponent } from './componentes/turnos-por-especialista/turnos-por-especialista.component';
+import { AltaHistoriaClinicaComponent } from './componentes/alta-historia-clinica/alta-historia-clinica.component';
+import { CantTurnosPorEspecialidadComponent } from './componentes/cant-turnos-por-especialidad/cant-turnos-por-especialidad.component';
+import { ExcelTurnosComponent } from './componentes/excel-turnos/excel-turnos.component';
+import { HistoriaClinicaComponent } from './componentes/historia-clinica/historia-clinica.component';
+import { ListaEspecialistasComponent } from './componentes/lista-especialistas/lista-especialistas.component';
+import { ListaPacientesComponent } from './componentes/lista-pacientes/lista-pacientes.component';
+import { LogIngresosComponent } from './componentes/log-ingresos/log-ingresos.component';
+import { MiPerfilComponent } from './componentes/mi-perfil/mi-perfil.component';
+import { MisHorariosComponent } from './componentes/mis-horarios/mis-horarios.component';
+import { MisTurnosEspecialistaComponent } from './componentes/mis-turnos-especialista/mis-turnos-especialista.component';
+import { MisTurnosComponent } from './componentes/mis-turnos/mis-turnos.component';
+import { PdfEspecialistaComponent } from './componentes/pdf-especialista/pdf-especialista.component';
+import { PacientesComponent } from './componentes/pacientes/pacientes.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EstadisticasComponent } from './componentes/estadisticas/estadisticas.component';
+import { CommonModule } from '@angular/common';
+import { EnvioEmailComponent } from './componentes/envio-email/envio-email.component';
+import { ResaltarDirective } from './directivas/resaltar.directive';
 
 
 @NgModule({
@@ -33,6 +63,7 @@ import { HighchartsChartModule } from 'highcharts-angular';
     AltaUsuarioComponent,
     BienvenidaComponent,
     NavbarComponent,
+    EnvioEmailComponent,
     RegistroComponent,
     UsuarioDetalleComponent,
     LoginComponent,
@@ -40,7 +71,35 @@ import { HighchartsChartModule } from 'highcharts-angular';
     AltaEspecialidadComponent,
     ListaEspecialidadComponent,
     CaptchaComponent,
-    CaptchaDirective
+    CaptchaDirective,
+    SeccionUsuariosComponent,
+    TurnosComponent,
+    FilterEspecialistaPipe,
+    FilterPacientePipe,
+    FilterTurnosPipe,
+    EstadoDirective,
+    SolicitarTurnosComponent,
+    TablaTurnosComponent,
+    TurnoDetalleComponent,
+    TurnosFinalizadosComponent,
+    TurnosPorDiaComponent,
+    TurnosPorEspecialistaComponent,
+    AltaHistoriaClinicaComponent,
+    CantTurnosPorEspecialidadComponent,
+    ExcelTurnosComponent,
+    HistoriaClinicaComponent,
+    ListaEspecialistasComponent,
+    ListaPacientesComponent,
+    LogIngresosComponent,
+    MiPerfilComponent,
+    MisHorariosComponent,
+    MisTurnosEspecialistaComponent,
+    MisTurnosComponent,
+    PdfEspecialistaComponent,
+    PacientesComponent,
+    EstadisticasComponent,
+    ResaltarDirective,
+  
   ],
   imports: [
     BrowserModule,
@@ -55,7 +114,9 @@ import { HighchartsChartModule } from 'highcharts-angular';
     ReactiveFormsModule,
     IngresoModule,
     RecaptchaModule,
-    HighchartsChartModule
+    HighchartsChartModule,
+    BrowserAnimationsModule,
+    CommonModule
     
   ],
   providers: [{ provide: FIREBASE_OPTIONS, useValue: environment.firebase} ],
